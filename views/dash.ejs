@@ -88,6 +88,7 @@
         margin: 0;
         padding: 0;
         margin-bottom: 30px;
+        padding-top: 30px;
     }
 
     footer .container {
@@ -356,6 +357,12 @@
     border-radius: 15px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 }
+.progress-section {
+    background-color: #333;
+    color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
 
     </style>
 </head>
@@ -447,9 +454,12 @@
             
             <h4 style="text-align: left; font-size: 18px; padding-top: 20px;">Progress</h4>
             
-            <div class="container">
-                <h4 style="text-align: left; font-size: 18px; padding-top: 20px;">Weight Progress</h4>
-                <canvas id="weightProgressChart"></canvas>
+            <div class="progress-section">
+                <div class="container">
+                    <h4 style="text-align: left; font-size: 18px; padding-top: 20px;">Weight Progress</h4>
+                    <canvas id="weightProgressChart"></canvas>
+                </div>
+            </div>
             </div>
             
 
@@ -461,12 +471,19 @@
     <footer>
         <div class="container">
             <div class="d-flex justify-content-between">
-                <button class="btn nav-btn flex-fill mx-1"><i class="bi bi-house"></i></button>
-                <button class="btn nav-btn flex-fill mx-9"><i class="bi bi-pie-chart"></i></button>
-                <button class="btn nav-btn flex-fill mx-1"><i class="bi bi-person"></i></button>
+                <a href="/" class="btn nav-btn flex-fill mx-1">
+                    <i class="bi bi-house"></i>
+                </a>
+                <a href="/foodlog" class="btn nav-btn flex-fill mx-9">
+                    <i class="bi bi-pie-chart"></i>
+                </a>
+                <a href="/profile" class="btn nav-btn flex-fill mx-1">
+                    <i class="bi bi-person"></i>
+                </a>
             </div>
         </div>
     </footer>
+    
     
     <!-- Bootstrap JS and dependencies -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
@@ -487,7 +504,7 @@ const data = {
 // Set up the bar chart
 const ctx = document.getElementById('weightProgressChart').getContext('2d');
 const weightProgressChart = new Chart(ctx, {
-    type: 'line', // Bar chart
+    type: 'line ', // Bar chart
     data: data,
     options: {
         responsive: true,

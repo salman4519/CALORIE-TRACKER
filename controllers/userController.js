@@ -6,6 +6,24 @@ const loadDash = async (req, res) => {
     }
 }
 
+const loadFoodLog = async (req, res) => {
+    try {
+        res.render("foodLog")
+    } catch (error) {
+        console.log("foodLog Broke",error)
+    }
+}
+
+const loadProfile = async (req, res) => {
+    try {
+        res.render("profile")
+    } catch (error) {
+        console.log("foodLog Broke",error)
+    }
+}
+
 module.exports ={
-    loadDash
+    loadDash,
+    loadFoodLog,
+    loadProfile
 }
